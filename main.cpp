@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 15:05:19 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/10/11 19:28:05 by kiteixei         ###   ########.fr       */
+/*   Created: 2025/10/11 18:47:10 by kiteixei          #+#    #+#             */
+/*   Updated: 2025/10/11 19:53:42 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <iostream>
-#include <string>
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-class Zombie
+int	main(void)
 {
-  private:
-  std::string name;
-
-  public:
-  void annonce(void);
-  // Constructeur
-  Zombie(std::string name);
-  // Destructor
-  ~Zombie();
-};
-
-//Fonction 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
-
-#endif
+	Zombie	*h;
+	h = newZombie("Heap");
+	h->annonce();
+  randomChump("Stack");
+  delete(h);
+}
