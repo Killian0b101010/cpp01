@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 15:05:19 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/10/11 19:28:05 by kiteixei         ###   ########.fr       */
+/*   Created: 2025/10/11 16:28:54 by kiteixei          #+#    #+#             */
+/*   Updated: 2025/10/11 21:07:08 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <iostream>
-#include <string>
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-class Zombie
+Zombie::Zombie(std::string name)
 {
-  private:
-  std::string name;
+  this->name = name;
+}
 
-  public:
-  void annonce(void);
-  // Constructeur
-  Zombie(std::string name);
-  // Destructor
-  ~Zombie();
-};
+Zombie::~Zombie()
+{
+}
 
-//Fonction 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
+void Zombie::annonce(void)
+{
+  std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;  
+}
 
-#endif
+void Zombie::setName(std::string newName)
+{
+  this->name = newName;
+}

@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 16:28:54 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/10/11 19:24:31 by kiteixei         ###   ########.fr       */
+/*   Created: 2025/10/11 18:47:10 by kiteixei          #+#    #+#             */
+/*   Updated: 2025/10/11 21:07:17 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+int	main(void)
 {
-  this->name = name;
+	Zombie	*h;
+	h = newZombie("Heap");
+	h->annonce();
+  randomChump("Stack");
+  delete(h);
 }
-
-Zombie::~Zombie()
-{
-}
-
-void Zombie::annonce(void)
-{
-  std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;  
-}
-
