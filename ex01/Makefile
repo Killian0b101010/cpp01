@@ -1,5 +1,5 @@
-NAME = 
-SRC = megaphone.cpp
+NAME = main 
+SRC = main.cpp Zombie.cpp zombieHordre.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 CFLAG = -Wall -Wextra -Werror -std=c++98
