@@ -6,7 +6,7 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 19:48:58 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/10/13 16:00:29 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/10/13 18:32:26 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,17 @@
 #include <iostream>
 #include <string>
 #include "HumanB.hpp"
+#include "HumanA.hpp"
 class Weapon
 {
   private:
   std::string type;
 
   public: 
-  const std::string& getType();
+  const std::string& getType()const;
   void setType(const std::string& weapon);
 
-  Weapon();
+  Weapon(const std::string& choice);
   ~Weapon();
 };
 #endif

@@ -6,7 +6,7 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 19:49:46 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/10/13 16:04:26 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:53:57 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ class HumanB
   
   public:
   HumanB(const std::string& name);
-  Weapon *Weapon;
+  Weapon *weapon;
+  void set_Weapon(Weapon& newWeapon);
+  void attack();
   ~HumanB();
 };
 #endif
