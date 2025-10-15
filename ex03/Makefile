@@ -1,22 +1,25 @@
 NAME = main 
 SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJ = $(SRC:.cpp=.o)
+DEP = $(SRC:.cpp=.d)
 CC = c++
-CFLAG = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -MP
 RM	= rm -rf
 
 all : $(NAME)
 
 $(NAME): $(OBJ)
-		$(CC) $(CFLAG) -o $@ $^
+		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp 
-		$(CC) $(CFLAG) -c $< -o $@
+		$(CC) $(CFLAGS) -c $< -o $@
 
 clean : 
-		$(RM) $(OBJ)
+		$(RM) $(OBJ) $(DEP)
 
 fclean : clean 
-		$(RM) $(NAME)
+		$(RM) $(NAME) 
 
 re: fclean all 
+
+-include $(DEP)
