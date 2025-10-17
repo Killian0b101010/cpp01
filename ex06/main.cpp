@@ -6,62 +6,62 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 09:17:48 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/10/17 11:51:41 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/10/17 12:43:19 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int Harl::CodeError(char **argv)
+Harl::Level Harl::CodeError(char **argv)
 {
-  int  code_error = 0;
   std::string table[4] = {"DEBUG","INFO","WARNING","ERROR"};
   std::string input = argv[1];
   for(int i = 0; i < 4; i++)
   {
     if(table[i] == input)
     {
-        code_error = i;
-        return(code_error);
+        Level level=(Level)(i);
+          return(level);
     }
   }
-  return(4);
+  return(NOTFOUND);
 }
 
-void Harl::DisplayMessage(int code_error,Harl harl)
+void Harl::DisplayMessage(Harl::Level level,Harl harl)
 {
-  switch(code_error)
+  switch(level)
   {
-    case 0:
+    case DEBUG:
       harl.complain("DEBUG");
       harl.complain("INFO");
       harl.complain("WARNING");
       harl.complain("ERROR");    
       break;
-    case 1:
+    case INFO:
       harl.complain("INFO");
       harl.complain("WARNING");
       harl.complain("ERROR");
       break;
-    case 2:
+    case WARNING:
       harl.complain("WARNING");
       harl.complain("ERROR");
       break;
-    case 3:
+    case ERROR:
       harl.complain("ERROR");
       break;
-    case 4:
+    case NOTFOUND:
       std::cout << "[Probably complaining about insignificant problems]" << std::endl;
       break;
   }
 }
+
 int main(int ac, char **argv)
 {
   if(ac == 2)
   {
     Harl harl;
-    int code_error = harl.CodeError(argv);
-    harl.DisplayMessage(code_error,harl);
+    Harl::Level level = harl.CodeError(argv);
+    harl.DisplayMessage(level,harl);
   }
   return(0);
 }
