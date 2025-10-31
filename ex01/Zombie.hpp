@@ -19,18 +19,18 @@
 class Zombie 
 {
   private:
-  std::string name;
+  std::string _name;
   
 
   public:
   void annonceHorde(void);  
-  void setName(std::string nameSet);
+  void setName(std::string _nameSet);
   
-  Zombie(std::string name);
+  Zombie(std::string _name);
   Zombie();
   ~Zombie();
 
 
 };
-Zombie *zombieHorde( int N, std::string name );
+Zombie *zombieHorde( int N, std::string _name );
 #endif 

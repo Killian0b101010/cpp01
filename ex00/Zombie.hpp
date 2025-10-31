@@ -18,18 +18,14 @@
 class Zombie
 {
   private:
-  std::string name;
+  std::string _name;
 
   public:
   void annonce(void);
-  void setName(std::string newName);
-  // Constructeur
-  Zombie(std::string name);
-  // Destructor
+  void setName(std::string _newName);
+  Zombie(std::string _name);
   ~Zombie();
 };
-
-//Fonction 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
+Zombie* newZombie( std::string _name );
+void randomChump( std::string _name );
 #endif

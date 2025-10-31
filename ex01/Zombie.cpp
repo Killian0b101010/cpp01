@@ -22,13 +22,13 @@ Zombie::~Zombie()
   std::cout << "Zombie Heap destroyed" << std::endl;
 }
 
-void Zombie::setName(std::string nameSet)
+void Zombie::setName(std::string _nameSet)
 {
-  this->name = nameSet;
+  this->_name = _nameSet;
 }
 
 void  Zombie::annonceHorde(void)
 {
   for(int i = 0; i < ZombieCount;i++)
-    std::cout <<"[" << i << "]" << name << " " <<  "Zombie" << std::endl;
+    std::cout <<"[" << i << "]" << _name << " " <<  "Zombie" << std::endl;
 }

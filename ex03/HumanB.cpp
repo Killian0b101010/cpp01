@@ -19,7 +19,7 @@ HumanB::HumanB(const std::string& name)
 
 HumanB::~HumanB(){std::cout << "HumanB Destroyed" << std::endl;}
 
-void HumanB::set_Weapon(Weapon& newWeapon)
+void HumanB::setWeapon(Weapon& newWeapon)
 {
   weapon = &newWeapon;
 }
